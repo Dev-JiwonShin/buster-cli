@@ -1,10 +1,10 @@
-# NEAR CLI (command line interface)
+# BUSTER CLI (command line interface)
 
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/near/near-cli)
 
-NEAR CLI is a Node.js application that relies on [`buster-api-js`](https://github.com/near/near-api-js) to connect to and interact with the NEAR blockchain. Create accounts, access keys, sign & send transactions with this versatile command line interface tool.
+BUSTER CLI is a Node.js application that relies on [`buster-api-js`](https://github.com/near/near-api-js) to connect to and interact with the BUSTER blockchain. Create accounts, access keys, sign & send transactions with this versatile command line interface tool.
 
-**Note:** Node.js version 10+ is required to run NEAR CLI.
+**Note:** Node.js version 10+ is required to run BUSTER CLI.
 
 ## Release notes
 
@@ -17,7 +17,7 @@ _Click on a command for more information and examples._
 | Command                                               | Description                                                                                                                            |
 | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | **ACCESS KEYS**                                       |                                                                                                                                        |
-| [`buster login`](#near-login)                           | stores a full access key locally using [NEAR Wallet](https://wallet.testnet.near.org/)                                                 |
+| [`buster login`](#near-login)                           | stores a full access key locally using [BUSTER Wallet](https://wallet.testnet.near.org/)                                                 |
 | [`buster keys`](#near-keys)                             | displays all access keys and their details for a given account                                                                         |
 | [`buster generate-key`](#near-generate-key)             | generates a local key pair **or** shows public key & [implicit account](http://docs.near.org/docs/roles/integrator/implicit-accounts)  |
 | [`buster add-key`](#near-add-key)                       | adds a new access key to an account                                                                                                    |
@@ -29,7 +29,7 @@ _Click on a command for more information and examples._
 | [`buster send`](#near-send)                             | sends tokens from one account to another                                                                                               |
 | [`buster delete`](#near-delete)                         | deletes an account and transfers remaining balance to a beneficiary account                                                            |
 | **CONTRACTS**                                         |                                                                                                                                        |
-| [`buster deploy`](#near-deploy)                         | deploys a smart contract to the NEAR blockchain                                                                                        |
+| [`buster deploy`](#near-deploy)                         | deploys a smart contract to the BUSTER blockchain                                                                                        |
 | [`buster dev-deploy`](#near-dev-deploy)                 | creates a development account and deploys a contract to it _(`testnet` only)_                                                          |
 | [`buster call`](#near-call)                             | makes a contract call which can invoke `change` _or_ `view` methods                                                                    |
 | [`buster view`](#near-view)                             | makes a contract call which can **only** invoke a `view` method                                                                        |
@@ -42,7 +42,7 @@ _Click on a command for more information and examples._
 | **JS-SDK**                                            |                                                                                                                                        |
 | [`buster js`](#near-js)                                 | Work with JS contract enclave                                                                                                          |
 | **REPL**                                              |                                                                                                                                        |
-| [`buster repl`](#near-repl)                             | launches an interactive connection to the NEAR blockchain ([REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) |
+| [`buster repl`](#near-repl)                             | launches an interactive connection to the BUSTER blockchain ([REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) |
 |                                                       | can also run a JS/TS file which exports an async main function that takes a [context](./context/index.d.ts) object                     |
 
 [ [**OPTIONS**](#options) ]
@@ -91,13 +91,13 @@ npm install -g buster-cli
 -   You can change the network by prepending an environment variable to your command.
 
 ```bash
-NEAR_ENV=betanet buster send ...
+BUSTER_ENV=betanet buster send ...
 ```
 
 -   Alternatively, you can set up a global environment variable by running:
 
 ```bash
-export NEAR_ENV=mainnet
+export BUSTER_ENV=mainnet
 ```
 
 ---
@@ -105,19 +105,19 @@ export NEAR_ENV=mainnet
 ### Custom RPC server selection
 You can set custom RPC server URL by setting this env variables:
 ```bash
-NEAR_CLI_MAINNET_RPC_SERVER_URL
-NEAR_CLI_TESTNET_RPC_SERVER_URL
-NEAR_CLI_BETANET_RPC_SERVER_URL
-NEAR_CLI_GUILDNET_RPC_SERVER_URL
-NEAR_CLI_LOCALNET_RPC_SERVER_URL
-NEAR_CLI_SHARDNET_RPC_SERVER_URL
-NEAR_CLI_CI_RPC_SERVER_URL
+BUSTER_CLI_MAINNET_RPC_SERVER_URL
+BUSTER_CLI_TESTNET_RPC_SERVER_URL
+BUSTER_CLI_BETANET_RPC_SERVER_URL
+BUSTER_CLI_GUILDNET_RPC_SERVER_URL
+BUSTER_CLI_LOCALNET_RPC_SERVER_URL
+BUSTER_CLI_SHARDNET_RPC_SERVER_URL
+BUSTER_CLI_CI_RPC_SERVER_URL
 ```
 Clear them in case you want to get back to the default RPC server.
 
 Example:
 ```bash
-export NEAR_CLI_TESTNET_RPC_SERVER_URL=<put_your_rpc_server_url_here>
+export BUSTER_CLI_TESTNET_RPC_SERVER_URL=<put_your_rpc_server_url_here>
 ```
 ---
 ### RPC server API Keys
@@ -135,7 +135,7 @@ This API Key will be saved in a config and used for each command you execute wit
 
 ### `buster login`
 
-> locally stores a full access key of an account you created with [NEAR Wallet](https://wallet.testnet.near.org/).
+> locally stores a full access key of an account you created with [BUSTER Wallet](https://wallet.testnet.near.org/).
 
 -   arguments: `none`
 -   options: `default`
@@ -293,7 +293,7 @@ buster generate-key --useLedgerKey
 
 You should then see the following prompt to confirm this request on your Ledger device:
 
-    Make sure to connect your Ledger and open NEAR app
+    Make sure to connect your Ledger and open BUSTER app
     Waiting for confirmation on Ledger...
 
 After confirming the request on your Ledger device, a public key and implicit accountId will be displayed.
@@ -322,7 +322,7 @@ buster generate-key --useLedgerKey="44'/397'/0'/0'/2'"
 
 You should then see the following prompt to confirm this request on your Ledger device:
 
-    Make sure to connect your Ledger and open NEAR app
+    Make sure to connect your Ledger and open BUSTER app
     Waiting for confirmation on Ledger...
 
 After confirming the request on your Ledger device, a public key and implicit accountId will be displayed.
@@ -548,7 +548,7 @@ buster state example.testnet
 
 ### `buster send`
 
-> Sends NEAR tokens (Ⓝ) from one account to another.
+> Sends BUSTER tokens (Ⓝ) from one account to another.
 
 -   arguments: `senderId` `receiverId` `amount`
 -   options: `default`
@@ -565,7 +565,7 @@ buster send sender.testnet receiver.testnet 10
 <summary><strong>Example Response</strong></summary>
 <p>
 
-    Sending 10 NEAR to receiver.testnet from sender.testnet
+    Sending 10 BUSTER to receiver.testnet from sender.testnet
     Transaction Id BYTr6WNyaEy2ykAiQB9P5VvTyrJcFk6Yw95HPhXC6KfN
     To see the transaction in the transaction explorer, please open this url in your browser
     https://explorer.testnet.buster.org/transactions/BYTr6WNyaEy2ykAiQB9P5VvTyrJcFk6Yw95HPhXC6KfN
@@ -743,7 +743,7 @@ buster view guest-book.testnet getMessages '{}'
 
 ---
 
-## NEAR EVM Contracts
+## BUSTER EVM Contracts
 
 ### `buster evm-view`
 
@@ -818,13 +818,13 @@ buster evm-call evm 0x89dfB1Cd61F05ad3971EC1f83056Fd9793c2D521 adopt '["6"]' --a
 
 ### `buster evm-dev-init`
 
-> Used for running EVM tests — creates a given number of test accounts on the desired network using a master NEAR account
+> Used for running EVM tests — creates a given number of test accounts on the desired network using a master BUSTER account
 
 -   arguments: `accountId`
 -   options: `numAccounts`
 
 ```bash
-NEAR_ENV=betanet buster evm-dev-init you.betanet 3
+BUSTER_ENV=betanet buster evm-dev-init you.betanet 3
 ```
 
 The above will create 3 subaccounts of `you.betanet`. This is useful for tests that require multiple accounts, for instance, sending fungible tokens back and forth. If the `3` value were to be omitted, it would use the default of 5.
@@ -949,7 +949,7 @@ buster validators current
 **Example for `mainnet`:**
 
 ```bash
-NEAR_ENV=mainnet buster validators current
+BUSTER_ENV=mainnet buster validators current
 ```
 
 <details>
@@ -1039,7 +1039,7 @@ buster validators next
 **Example for `mainnet`:**
 
 ```bash
-NEAR_ENV=mainnet buster validators next
+BUSTER_ENV=mainnet buster validators next
 ```
 
 <details>
@@ -1129,7 +1129,7 @@ buster proposals
 **Example for `mainnet`:**
 
 ```bash
-NEAR_ENV=mainnet buster proposals
+BUSTER_ENV=mainnet buster proposals
 ```
 
 <details>
@@ -1281,7 +1281,7 @@ buster js call dev-1653005231830-15694723179173 set_status '["hello world"]' --d
 <summary><strong>Example Response</strong></summary>
 <p>
 
-    Scheduling a call in JSVM[jsvm.testnet]: dev-1653005231830-15694723179173.set_status(["hello world"]) with attached 0.1 NEAR
+    Scheduling a call in JSVM[jsvm.testnet]: dev-1653005231830-15694723179173.set_status(["hello world"]) with attached 0.1 BUSTER
     Receipts: 5QUuNwSYrDcEPKuSnU7fKN7YCGfXmdmZR9m3zUSTek7P, 3YU4eFhqBruc4z8KKLZr1U1oY31A6Bfks45GLA2rq5GS
       Log [jsvm.testnet]: dev-1653005231830-15694723179173 set_status with message hello world
     Transaction Id sP8s9REgK9YcZzkudyccg8R968zYWDVGCNv4wxeZsUe
@@ -1343,7 +1343,7 @@ buster js remove --accountId dev-1653005231830-15694723179173
 
 ### `buster repl`
 
-> Launches NEAR [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) _(an interactive JavaScript programming invironment)_ connected to NEAR.
+> Launches BUSTER [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) _(an interactive JavaScript programming invironment)_ connected to BUSTER.
 
 -   arguments: `none`
 -   options: `--accountId`, `--script`
@@ -1354,8 +1354,8 @@ To launch, run:
 buster repl
 ```
 
--   You will then be shown a prompt `>` and can begin interacting with NEAR.
--   Try typing the following into your prompt that converts NEAR (Ⓝ) into yoctoNEAR (10^-24):
+-   You will then be shown a prompt `>` and can begin interacting with BUSTER.
+-   Try typing the following into your prompt that converts BUSTER (Ⓝ) into yoctoBUSTER (10^-24):
 
 ```bash
 nearAPI.utils.format.parseNearAmount('1000')
@@ -1455,7 +1455,7 @@ const myPrivateKey =
 nearAPI.KeyPair.fromString(myPrivateKey).publicKey.toString();
 ```
 
-With NEAR REPL you have complete access to [`buster-api-js`](https://github.com/near/near-api-js) to help you develop on the NEAR platform.
+With BUSTER REPL you have complete access to [`buster-api-js`](https://github.com/near/near-api-js) to help you develop on the BUSTER platform.
 
 ---
 
@@ -1465,15 +1465,15 @@ With NEAR REPL you have complete access to [`buster-api-js`](https://github.com/
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `--help`                   |  Show help  [boolean]                                                                                                                  |
 | `--version`                |  Show version number  [boolean]                                                                                                        |
-| `--nodeUrl, --node_url`    |  NEAR node URL  [string] [default: "https://rpc.testnet.near.org"]                                                                     |
-| `--networkId, --network_id`|  NEAR network ID, allows using different keys based on network  [string] [default: "testnet"]                                          |
-| `--helperUrl`              |  NEAR contract helper URL  [string]                                                                                                    |
+| `--nodeUrl, --node_url`    |  BUSTER node URL  [string] [default: "https://rpc.testnet.near.org"]                                                                     |
+| `--networkId, --network_id`|  BUSTER network ID, allows using different keys based on network  [string] [default: "testnet"]                                          |
+| `--helperUrl`              |  BUSTER contract helper URL  [string]                                                                                                    |
 | `--keyPath`                |  Path to master account key  [string]                                                                                                  |
 | `--accountId, --account_id`|  Unique identifier for the account  [string]                                                                                           |
 | `--useLedgerKey`           |  Use Ledger for signing with given HD key path  [string] [default: "44'/397'/0'/0'/1'"]                                                |
 | `--seedPhrase`             |  Seed phrase mnemonic  [string]                                                                                                        |
 | `--seedPath`               |  HD path derivation  [string] [default: "m/44'/397'/0'"]                                                                               |
-| `--walletUrl`              |  Website for NEAR Wallet  [string]                                                                                                     |
+| `--walletUrl`              |  Website for BUSTER Wallet  [string]                                                                                                     |
 | `--contractName`           |  Account name of contract  [string]                                                                                                    |
 | `--masterAccount`          |  Master account used when creating new accounts  [string]                                                                              |
 | `--helperAccount`          |  Expected top-level account for a network  [string]                                                                                    |
